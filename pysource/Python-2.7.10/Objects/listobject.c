@@ -185,7 +185,7 @@ PyList_GetItem(PyObject *op, Py_ssize_t i)
     if (i < 0 || i >= Py_SIZE(op)) {
         if (indexerr == NULL) {
             indexerr = PyString_FromString(
-                "FAAAAAIIIIIL!!!!");
+                "Modified IndexError at PyList_GetItem");
             if (indexerr == NULL)
                 return NULL;
         }
@@ -209,7 +209,7 @@ PyList_SetItem(register PyObject *op, register Py_ssize_t i,
     if (i < 0 || i >= Py_SIZE(op)) {
         Py_XDECREF(newitem);
         PyErr_SetString(PyExc_IndexError,
-                        "FAAAAIL!!");
+                        "Modified IndexError at PyList_SetItem");
         return -1;
     }
     p = ((PyListObject *)op) -> ob_item + i;
@@ -452,7 +452,7 @@ list_item(PyListObject *a, Py_ssize_t i)
     if (i < 0 || i >= Py_SIZE(a)) {
         if (indexerr == NULL) {
             indexerr = PyString_FromString(
-                "FAIL!");
+                "Modified IndexError at list_item");
             if (indexerr == NULL)
                 return NULL;
         }
@@ -763,7 +763,7 @@ list_ass_item(PyListObject *a, Py_ssize_t i, PyObject *v)
     PyObject *old_value;
     if (i < 0 || i >= Py_SIZE(a)) {
         PyErr_SetString(PyExc_IndexError,
-                        "FAAAAAAIL!!");
+                        "Modified IndexError at list_ass_item");
         return -1;
     }
     if (v == NULL)
@@ -2588,7 +2588,7 @@ list_subscript(PyListObject* self, PyObject* item)
     }
     else {
         PyErr_Format(PyExc_TypeError,
-                     "list indices must be integers, not %.200s",
+                     "Modified IndexError at list_subscript (Passed %.200s)",
                      item->ob_type->tp_name);
         return NULL;
     }
