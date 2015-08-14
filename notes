@@ -1,8 +1,0 @@
-listobject.c
-
-PyList_GetItem (179)
-PyList_SetItem (199)
-listpop (927)
-list_ass_item (761)
-list_item (450)
-
