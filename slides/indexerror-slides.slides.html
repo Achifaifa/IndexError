@@ -2167,8 +2167,8 @@ In&nbsp;[14]:
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Solution 2.5:
-Just download the source tarball, make and compile<br>Everything will remain within the source folder!</p>
+<h4 id="solution-2-5-">Solution 2.5:</h4>
+<p>Just download the source tarball, <code>configure</code> and <code>make</code><br>Everything will remain within the source folder!</p>
 </div>
 </div>
 </div>
@@ -2205,6 +2205,16 @@ Just download the source tarball, make and compile<br>Everything will remain wit
 <p><img src="./img/compiwin.png" alt=""></p>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="step-e-swap-all-the-exception-strings">Step <em>e</em>: Swap all the exception strings</h3>
+<p><img src="./img/modified.png" alt=""></p>
+</div>
+</div>
 </div></section>
     </section><section>
     <section>
@@ -2228,7 +2238,45 @@ Just download the source tarball, make and compile<br>Everything will remain wit
 </div>
 </div>
 </div>
-    </div></section>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="problem-3-">Problem 3:</h4>
+<p>Voodoo! Regular C string formatting doesn&#39;t work!</p>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="solution-3-">Solution 3:</h4>
+<p>Here it works:
+<img src="./img/formatworks.png" alt="">
+Here it doesn&#39;t:
+<img src="./img/formatdoesntwork.png" alt=""></p>
+</div>
+</div>
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="it-s-alive-sort-of-">It&#39;s alive! Sort of!</h3>
+<p><img src="./img/itworks.png" alt=""></p>
+</div>
+</div>
+</div></section>
     </section><section>
     <section>
     
@@ -2238,9 +2286,108 @@ Just download the source tarball, make and compile<br>Everything will remain wit
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="step-4-rinse-and-repeat">Step 4: Rinse and repeat</h3>
+<p><img src="./img/indexeswork.png" alt=""></p>
 </div>
 </div>
 </div></section>
+    </section><section>
+    <section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="step-5-what-about-names-">Step 5: What about names?</h3>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="bad-news-everyone-">Bad news, everyone :(</h4>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Python variables are just references to objects</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Python objects don&#39;t store the name of variables that reference them</li>
+</ul>
+</div>
+</div>
+</div>
+    </div></section><section>
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="possible-workaraounds">Possible workaraounds</h3>
+</div>
+</div>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Store the name of everything that references the object in the object</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Go back to the python code and check which variable name was used</li>
+</ul>
+</div>
+</div>
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>¯\<em>(ツ)</em>/¯</li>
+</ul>
+</div>
+</div>
+</div>
+    </div></section>
     </section><section>
     <section>
     
