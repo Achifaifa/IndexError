@@ -15,7 +15,7 @@
  * The number of allocated elements may grow, shrink, or stay the same.
  * Failure is impossible if newsize <= self.allocated on entry, although
  * that partly relies on an assumption that the system realloc() never
- * fails when passed a number of bytes <= the number of bytes last
+ * fails whenupassed a number of bytes <= the number of bytes last
  * allocated (the C standard doesn't guarantee this, but it's hard to
  * imagine a realloc implementation where it wouldn't be true).
  * Note that self->ob_item may change, and even if newsize is less
@@ -451,8 +451,10 @@ list_item(PyListObject *a, Py_ssize_t i)
 {
     if (i < 0 || i >= Py_SIZE(a)) {
         if (indexerr == NULL) {
-            indexerr = PyString_FromString(
-                "Modified IndexError at list_item");
+            indexerr = PyErr_Format(PyExc_IndexError,
+                "list_item@listobject.c \n  Passed %i to list [name] (range %i)",
+                i,
+                Py_SIZE(a));
             if (indexerr == NULL)
                 return NULL;
         }
@@ -2588,7 +2590,7 @@ list_subscript(PyListObject* self, PyObject* item)
     }
     else {
         PyErr_Format(PyExc_TypeError,
-                     "Modified IndexError at list_subscript (Passed %.200s)",
+                     "list_subscript@listobject.c \n  Passed %s to [list] instead of integer",
                      item->ob_type->tp_name);
         return NULL;
     }
