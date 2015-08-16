@@ -184,8 +184,11 @@ PyList_GetItem(PyObject *op, Py_ssize_t i)
     }
     if (i < 0 || i >= Py_SIZE(op)) {
         if (indexerr == NULL) {
-            indexerr = PyString_FromString(
-                "Modified IndexError at PyList_GetItem");
+            indexerr = PyErr_Format(PyExc_IndexError,
+                "PyList_GetItem@listobject.c\n  Tried to get element %i of [list] (Range %i)",
+                i,
+                Py_SIZE(i)
+            );
             if (indexerr == NULL)
                 return NULL;
         }
@@ -208,8 +211,11 @@ PyList_SetItem(register PyObject *op, register Py_ssize_t i,
     }
     if (i < 0 || i >= Py_SIZE(op)) {
         Py_XDECREF(newitem);
-        PyErr_SetString(PyExc_IndexError,
-                        "Modified IndexError at PyList_SetItem");
+        PyErr_Format(PyExc_IndexError,
+          "PyList_SetItem@listobject.c\n  Tried to set element %i of [list] (Range %i)",
+          i,
+          Py_SIZE(op)
+        );
         return -1;
     }
     p = ((PyListObject *)op) -> ob_item + i;
@@ -764,8 +770,11 @@ list_ass_item(PyListObject *a, Py_ssize_t i, PyObject *v)
 {
     PyObject *old_value;
     if (i < 0 || i >= Py_SIZE(a)) {
-        PyErr_SetString(PyExc_IndexError,
-                        "Modified IndexError at list_ass_item");
+          PyErr_Format(PyExc_IndexError,
+            "list_ass_item@listobject.c\n Tried to assign element %i of [list] (Range %i)",
+            i,
+            Py_SIZE(a)
+          );
         return -1;
     }
     if (v == NULL)
