@@ -16,5 +16,5 @@ This project is still a work in progress
 
 If you just want to try it out, you can launch the compiled binary with `./python` to get the interpreter  
 This is not the same as launching `python` from your console. Make sure you are launching the binary in the `python-2.7.10` folder  
-If you want to install the modified version of python in your system, type `make install`  
 
+If you try to install this in your system, do so at your own risk
