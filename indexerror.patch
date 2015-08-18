@@ -1,0 +1,76 @@
+diff -ur python-2.7.10/Objects/listobject.c source/Python-2.7.10/Objects/listobject.c
+--- python-2.7.10/Objects/listobject.c	2015-08-16 21:20:55.767166306 +0200
++++ source/Python-2.7.10/Objects/listobject.c	2015-05-23 18:09:22.000000000 +0200
+@@ -15,7 +15,7 @@
+  * The number of allocated elements may grow, shrink, or stay the same.
+  * Failure is impossible if newsize <= self.allocated on entry, although
+  * that partly relies on an assumption that the system realloc() never
+- * fails whenupassed a number of bytes <= the number of bytes last
++ * fails when passed a number of bytes <= the number of bytes last
+  * allocated (the C standard doesn't guarantee this, but it's hard to
+  * imagine a realloc implementation where it wouldn't be true).
+  * Note that self->ob_item may change, and even if newsize is less
+@@ -184,11 +184,8 @@
+     }
+     if (i < 0 || i >= Py_SIZE(op)) {
+         if (indexerr == NULL) {
+-            indexerr = PyErr_Format(PyExc_IndexError,
+-                "PyList_GetItem@listobject.c\n  Tried to get element %i of [list] (Range %i)",
+-                i,
+-                Py_SIZE(i)
+-            );
++            indexerr = PyString_FromString(
++                "list index out of range");
+             if (indexerr == NULL)
+                 return NULL;
+         }
+@@ -211,11 +208,8 @@
+     }
+     if (i < 0 || i >= Py_SIZE(op)) {
+         Py_XDECREF(newitem);
+-        PyErr_Format(PyExc_IndexError,
+-          "PyList_SetItem@listobject.c\n  Tried to set element %i of [list] (Range %i)",
+-          i,
+-          Py_SIZE(op)
+-        );
++        PyErr_SetString(PyExc_IndexError,
++                        "list assignment index out of range");
+         return -1;
+     }
+     p = ((PyListObject *)op) -> ob_item + i;
+@@ -457,10 +451,8 @@
+ {
+     if (i < 0 || i >= Py_SIZE(a)) {
+         if (indexerr == NULL) {
+-            indexerr = PyErr_Format(PyExc_IndexError,
+-                "list_item@listobject.c \n  Passed %i to list [name] (range %i)",
+-                i,
+-                Py_SIZE(a));
++            indexerr = PyString_FromString(
++                "list index out of range");
+             if (indexerr == NULL)
+                 return NULL;
+         }
+@@ -770,11 +762,8 @@
+ {
+     PyObject *old_value;
+     if (i < 0 || i >= Py_SIZE(a)) {
+-          PyErr_Format(PyExc_IndexError,
+-            "list_ass_item@listobject.c\n Tried to assign element %i of [list] (Range %i)",
+-            i,
+-            Py_SIZE(a)
+-          );
++        PyErr_SetString(PyExc_IndexError,
++                        "list assignment index out of range");
+         return -1;
+     }
+     if (v == NULL)
+@@ -2599,7 +2588,7 @@
+     }
+     else {
+         PyErr_Format(PyExc_TypeError,
+-                     "list_subscript@listobject.c \n  Passed %s to [list] instead of integer",
++                     "list indices must be integers, not %.200s",
+                      item->ob_type->tp_name);
+         return NULL;
+     }

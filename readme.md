@@ -7,6 +7,7 @@ This project is still a work in progress
 
  `python-2.7.10` Contains Python's modified source code (Plus i386 x86 binaries for linux)  
  `slides` contains a ipython notebook with the presentation of the project  
+ `indexerror.patch` applies all the changes to the python 2.7.10 source from python.org
 
 ###Compiling  
 

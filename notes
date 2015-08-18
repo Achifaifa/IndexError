@@ -1,2 +1,0 @@
-Check structure of PyListObject and Py_ssize_t
-Check printing Py_ssize_t (integer?), PyListObject name and PyListObject size
