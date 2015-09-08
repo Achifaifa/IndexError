@@ -34,7 +34,7 @@ build=		i686-pc-linux-gnu
 host=		i686-pc-linux-gnu
 
 CC=		gcc -pthread
-CXX=		g++ -pthread
+CXX=		g++
 MAINCC=		$(CC)
 LINKCC=		$(PURIFY) $(MAINCC)
 AR=		ar

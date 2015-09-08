@@ -135,16 +135,16 @@
 /* #undef HAVE_CTERMID_R */
 
 /* Define to 1 if you have the <curses.h> header file. */
-#define HAVE_CURSES_H 1
+/* #undef HAVE_CURSES_H */
 
 /* Define if you have the 'is_term_resized' function. */
-#define HAVE_CURSES_IS_TERM_RESIZED 1
+/* #undef HAVE_CURSES_IS_TERM_RESIZED */
 
 /* Define if you have the 'resizeterm' function. */
-#define HAVE_CURSES_RESIZETERM 1
+/* #undef HAVE_CURSES_RESIZETERM */
 
 /* Define if you have the 'resize_term' function. */
-#define HAVE_CURSES_RESIZE_TERM 1
+/* #undef HAVE_CURSES_RESIZE_TERM */
 
 /* Define to 1 if you have the declaration of `isfinite', and to 0 if you
    don't. */
@@ -432,7 +432,7 @@
 #define HAVE_LIBINTL_H 1
 
 /* Define if you have the readline library (-lreadline). */
-#define HAVE_LIBREADLINE 1
+/* #undef HAVE_LIBREADLINE */
 
 /* Define to 1 if you have the `resolv' library (-lresolv). */
 /* #undef HAVE_LIBRESOLV */
@@ -486,7 +486,7 @@
 #define HAVE_MREMAP 1
 
 /* Define to 1 if you have the <ncurses.h> header file. */
-#define HAVE_NCURSES_H 1
+/* #undef HAVE_NCURSES_H */
 
 /* Define to 1 if you have the <ndir.h> header file, and it defines `DIR'. */
 /* #undef HAVE_NDIR_H */
@@ -549,7 +549,7 @@
 #define HAVE_PUTENV 1
 
 /* Define if the libcrypto has RAND_egd */
-#define HAVE_RAND_EGD 1
+/* #undef HAVE_RAND_EGD */
 
 /* Define to 1 if you have the `readlink' function. */
 #define HAVE_READLINK 1
@@ -558,25 +558,25 @@
 #define HAVE_REALPATH 1
 
 /* Define if you have readline 2.1 */
-#define HAVE_RL_CALLBACK 1
+/* #undef HAVE_RL_CALLBACK */
 
 /* Define if you can turn off readline's signal handling. */
-#define HAVE_RL_CATCH_SIGNAL 1
+/* #undef HAVE_RL_CATCH_SIGNAL */
 
 /* Define if you have readline 2.2 */
-#define HAVE_RL_COMPLETION_APPEND_CHARACTER 1
+/* #undef HAVE_RL_COMPLETION_APPEND_CHARACTER */
 
 /* Define if you have readline 4.0 */
-#define HAVE_RL_COMPLETION_DISPLAY_MATCHES_HOOK 1
+/* #undef HAVE_RL_COMPLETION_DISPLAY_MATCHES_HOOK */
 
 /* Define if you have readline 4.2 */
-#define HAVE_RL_COMPLETION_MATCHES 1
+/* #undef HAVE_RL_COMPLETION_MATCHES */
 
 /* Define if you have rl_completion_suppress_append */
-#define HAVE_RL_COMPLETION_SUPPRESS_APPEND 1
+/* #undef HAVE_RL_COMPLETION_SUPPRESS_APPEND */
 
 /* Define if you have readline 4.0 */
-#define HAVE_RL_PRE_INPUT_HOOK 1
+/* #undef HAVE_RL_PRE_INPUT_HOOK */
 
 /* Define to 1 if you have the `round' function. */
 #define HAVE_ROUND 1
@@ -832,7 +832,7 @@
 #define HAVE_TERMIOS_H 1
 
 /* Define to 1 if you have the <term.h> header file. */
-#define HAVE_TERM_H 1
+/* #undef HAVE_TERM_H */
 
 /* Define to 1 if you have the `tgamma' function. */
 #define HAVE_TGAMMA 1
@@ -921,7 +921,7 @@
 #define HAVE_WORKING_TZSET 1
 
 /* Define if the zlib library has inflateCopy */
-#define HAVE_ZLIB_COPY 1
+/* #undef HAVE_ZLIB_COPY */
 
 /* Define to 1 if you have the `_getpty' function. */
 /* #undef HAVE__GETPTY */
@@ -941,7 +941,7 @@
 /* #undef MAJOR_IN_SYSMACROS */
 
 /* Define if mvwdelch in curses.h is an expression. */
-#define MVWDELCH_IS_EXPRESSION 1
+/* #undef MVWDELCH_IS_EXPRESSION */
 
 /* Define to the address where bug reports for this package should be sent. */
 /* #undef PACKAGE_BUGREPORT */
@@ -1106,7 +1106,7 @@
 /* #undef WANT_WCTYPE_FUNCTIONS */
 
 /* Define if WINDOW in curses.h offers a field _flags. */
-#define WINDOW_HAS_FLAGS 1
+/* #undef WINDOW_HAS_FLAGS */
 
 /* Define if you want documentation strings in extension modules */
 #define WITH_DOC_STRINGS 1

@@ -27,9 +27,7 @@
 
 #include "pygetopt.h"
 
-#define COPYRIGHT \
-    "Type \"help\", \"copyright\", \"credits\" or \"license\" " \
-    "for more information."
+#define COPYRIGHT ""
 
 #ifdef __cplusplus
 extern "C" {
@@ -545,13 +543,14 @@ Py_Main(int argc, char **argv)
 #endif
     Py_Initialize();
 
-    if (Py_VerboseFlag ||
-        (command == NULL && filename == NULL && module == NULL && stdin_is_interactive)) {
-        fprintf(stderr, "Python %s on %s\n",
-            Py_GetVersion(), Py_GetPlatform());
-        if (!Py_NoSiteFlag)
-            fprintf(stderr, "%s\n", COPYRIGHT);
-    }
+    // This prints the annoying motd
+    // if (Py_VerboseFlag ||
+    //    (command == NULL && filename == NULL && module == NULL && stdin_is_interactive)) {
+    //     fprintf(stderr, "Python %s on %s\n",
+    //        Py_GetVersion(), Py_GetPlatform());
+    //    if (!Py_NoSiteFlag)
+    //        fprintf(stderr, "%s\n", COPYRIGHT);
+    // }
 
     if (command != NULL) {
         /* Backup _PyOS_optind and force sys.argv[0] = '-c' */
